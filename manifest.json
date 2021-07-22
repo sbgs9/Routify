@@ -1,0 +1,9 @@
+{
+    "name": "Routify",
+    "description": "Find the most efficient travel routes for your multi-destination travel routes with routify!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html"
+      }
+}
