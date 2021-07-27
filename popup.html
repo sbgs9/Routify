@@ -2,13 +2,18 @@
 <html>
   <head>
     <link rel="stylesheet" href="./popup.css">
-  </head>
+    <!--FONT CSS-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!--MATERIAL UI CSS & JS-->
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+    <script src="./jquery-3.6.0.min.js"></script>  </head>
   <body>
-    <div>
-        <h1>TESTING OUT CHROME APP</h1>
-        <button>HELLO!</button>
-        <button>Goodbye!</button> 
-    </div>
+      <h1 id="text-routify">Routify!</h1>
+      <div id="button-container">
+        <button id="btn-optimize" class="mdc-button mdc-button--raised">Optimize Route</button>
+      </div>
   </body>
   <script src="./popup.js"></script>
 </html>
