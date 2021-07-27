@@ -1,5 +1,6 @@
 $(document).ready(function() {
     $("#btn-optimize").click(function() {
-        alert("HELLO World!");
+        var alertMessage = "Your route is now optimized. Thanks for using Routify!";
+        alert(alertMessage);
     });
 });

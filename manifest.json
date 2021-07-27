@@ -1,9 +1,10 @@
 {
-    "name": "Routify",
-    "description": "Find the most efficient travel routes for your multi-destination travel routes with routify!",
+  "name": "Routify",
+    "description": "Find the most efficient travel route for your multi-destination travel needs with Routify!",
     "version": "1.0",
     "manifest_version": 3,
     "action": {
-        "default_popup": "popup.html"
+        "default_popup": "popup.html",
+        "default_icon": "routify-logo.png"
       }
 }
