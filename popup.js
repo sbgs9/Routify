@@ -1,13 +1,15 @@
 $(document).ready(function() {
     $("#btn-optimize").click(function() {
-        //var alertMessage = "Your route is now optimized. Thanks for using Routify!";
-        //alert(alertMessage);
-        
-        Swal.fire(
-            'Thanks for using Routify!',
-            'Your route is now optimized!',
-            'success'
-        )
-        
+        $('body').css('height', '450');
+        cuteAlert({
+            type: "success",
+            title: "Thanks for using Routify!",
+            message: "Your route is now optimized!",
+            buttonText: "Woohoo!"
+        }).then(function() {
+            $('body').css('height', '200');
+        });
+
+
     });
 });

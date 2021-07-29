@@ -20,10 +20,10 @@ body {
     align-items: center;
 }
 
-/* #btn-optimize {
+#btn-optimize {
     transition: all 0.3s ease 0s;
-} */
+} 
 
 #btn-optimize:hover {
-  background: #4B0082;		
+  background: #4800ac;		
 }
