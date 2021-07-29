@@ -9,7 +9,5 @@ $(document).ready(function() {
         }).then(function() {
             $('body').css('height', '200');
         });
-
-
     });
 });
