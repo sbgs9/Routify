@@ -5,14 +5,17 @@ class Graph {
         this.adjList = new Map();
     }
 
-    get adjList() {
+    //Returns the adjacency list map which represents the graph
+    adjList() {
         return this.adjList;
     }
 
-    get neighbors(vertex) {
+    //Returns an array containing the neighbors of the input node
+    neighbors(vertex) {
         return this.adjList.get(vertex);
     }
 
+    //Returns the edge weight between two nodes
     get edgeWeight(vertex, otherVertex) {
         for(let value of this.adjList.get(vertex)) {
             if(value.otherVertex === otherVertex) {
@@ -33,6 +36,7 @@ class Graph {
         this.adjList.get(otherVertex).push({otherVertex: vertex, weight: weight});
     }
 
+    //Takes one node and runs djikstra's algorithm, returning a list of distances from the input node to every other node in the graph
     djikstra(sNode) {
         let pQueue = new PriorityQueue();
         let distances = {};
@@ -64,6 +68,7 @@ class Graph {
         return distances;
     }
     
+    //Prints out the adjacency list of the graph
     print() {
         for(let key of this.adjList.keys()) {
             let values = "";
