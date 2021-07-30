@@ -13,6 +13,15 @@ class Graph {
         return this.adjList.get(vertex);
     }
 
+    get edgeWeight(vertex, otherVertex) {
+        for(let value of this.adjList.get(vertex)) {
+            if(value.otherVertex === otherVertex) {
+                return value.weight;
+            }
+        }
+        return -1;
+    }
+
     //Adds a vertex with the specified value in the adjacency list
     addVertex(value) {
         this.adjList.set(value, []);
@@ -24,18 +33,35 @@ class Graph {
         this.adjList.get(otherVertex).push({otherVertex: vertex, weight: weight});
     }
 
-    djikstra(node) {
+    djikstra(sNode) {
         let pQueue = new PriorityQueue();
-        let vertices = []
-        for(vertex of this.adjList.keys()) {
-            vertices.push({vertex: vertex, distance: Infinity, previousNode: null, done: false});
+        let distances = {};
+        let visited = {};
+        let previousNodes = {}; 
+        distances[sNode] = 0;
+        pQueue.enqueue(sNode, 0);
+        for(let node of this.adjList.keys()) {
+            if(node !== sNode) distances[node] = Infinity;
+            previousNodes[node] = null;
+            visited[node] = false;
         }
-        pQueue.enqueue(node, 0);
         while(!pQueue.isEmpty()) {
-            let curr = pQueue.front();
-            pQueue.dequeue();
-            vertices.find(curr)
+            let curr = pQueue.dequeue();
+            let currWeight = curr.priority;
+            if(visited[curr.element] === false) {
+                visited[curr.element] = true;
+                for(let neighbor of this.neighbors(curr.element)) {
+                    let dist = distances[curr.element] + this.edgeWeight(curr.element, neighbor.otherVertex);
+                    if(dist < distances[neighbor.otherVertex]) {
+                        distances[neighbor.otherVertex] = dist;
+                        previousNodes[neighbor.otherVertex] = curr.element;
+                        pQueue.enqueue(neighbor.otherVertex, distances[neighbor.otherVertex]);
+                    }
+                }
+            }
+
         }
+        return distances;
     }
     
     print() {
@@ -47,10 +73,4 @@ class Graph {
             console.log(key + " => " + values);
         }
     }
-
-    constructor(hello);
-    addVertex(h);
-    addVertex(e);
-    addEdge(l);
-    print();
 }
