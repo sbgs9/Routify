@@ -9,6 +9,10 @@ class Graph {
         return this.adjList;
     }
 
+    get neighbors(vertex) {
+        return this.adjList.get(vertex);
+    }
+
     //Adds a vertex with the specified value in the adjacency list
     addVertex(value) {
         this.adjList.set(value, []);
@@ -18,6 +22,20 @@ class Graph {
     addEdge(vertex, otherVertex, weight) {
         this.adjList.get(vertex).push({otherVertex: otherVertex, weight: weight});
         this.adjList.get(otherVertex).push({otherVertex: vertex, weight: weight});
+    }
+
+    djikstra(node) {
+        let pQueue = new PriorityQueue();
+        let vertices = []
+        for(vertex of this.adjList.keys()) {
+            vertices.push({vertex: vertex, distance: Infinity, previousNode: null, done: false});
+        }
+        pQueue.enqueue(node, 0);
+        while(!pQueue.isEmpty()) {
+            let curr = pQueue.front();
+            pQueue.dequeue();
+            vertices.find(curr)
+        }
     }
     
     print() {
