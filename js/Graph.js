@@ -1,4 +1,5 @@
 class Graph {
+
     // constructor for undirected graph
     constructor(numValues) {
         this.numValues = numValues;
@@ -25,4 +26,10 @@ class Graph {
             console.log(key + " => " + values);
         }
     }
+
+    constructor(hello);
+    addVertex(h);
+    addVertex(e);
+    addEdge(l);
+    print();
 }
