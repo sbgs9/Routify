@@ -1,5 +1,7 @@
 # Routify
 
+![Routify Logo](https://github.com/sbgs9/Routify/blob/master/routify-logo.png?raw=true)
+
 The idea for routify was started when two friends (Vanshaj) and (Ganesh) were planning their summer vacation trip to New York City and were figuring out how far 
 several destinations were from their hotel and they came to realize that as you add multiple stops on Google Maps, it doesn't optimize the route to make your rote 
 as efficient as possible, rather it just does it in the order you put the stops. To tourists and travelers like us, there is often times when the exact order of the 
